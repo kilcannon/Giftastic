@@ -86,17 +86,13 @@ $('document').ready(function() {
     }
   }
 
-  function addFavorite() {
+  function addFavorite() { //adds preview gifs to the favorites section of the page
     var tinyImage = $('<img>')
     var testInput = $(this).attr("favButton").replace('favButton-', '.gif-result-')
     var newTinyURL = $(testInput).attr("data-preview")
     tinyImage.attr('src', newTinyURL)
     tinyImage.addClass('favorite-gif')
     $("#favorites").append(tinyImage)
-    console.log(newTinyURL)
-    // var newTinyImageURL = $("").attr('preview')
-    // console.log(newTinyImageURL)
-    // tinyImage.attr('src', newTinyImageURL)
   }
 
   $(document).on("click", "img", imageFlipper) //listens for button click of images to check for animate status
@@ -104,6 +100,6 @@ $('document').ready(function() {
   $(document).on("click", "#add-gif", buttonPrintOut) //listens for click of button add to refresh button loadout
 	$(document).on("click", ".favButton", addFavorite) //listens for click of button add to favorite section
   buttonPrintOut() //initializes button printout to begin giphy searches
-  addNewButton()
+  addNewButton() //allows a user to create a new category for buttons to pull giphy results
 
 });
