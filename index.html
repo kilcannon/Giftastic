@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="assets/css/reset.css">	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<meta charset="UTF-8">
+	<title>Giftastic!</title>
+</head>
+<body>
+
+	<div class="row container">
+    
+    <div id="button-container" class="col-md-2">
+
+  		<form id="gif-add-form">
+  			<label for="gif-subject">Add new gif button!</label>
+  			<input type="text" id="gif-subject-input">
+  			<input id="add-gif" type="submit" value="Submit">
+  		</form>
+
+      <div id="gif-buttons">
+      </div>
+
+    </div>
+
+    <div id="gif-container" class="col-md-9"><h3>Gif Results</h3>
+  		<div id="gif-output">
+  		</div>
+    </div>
+
+    <div id="favorites-container" class="col-md-1"><h3>Favorites</h3>
+      <div id="favorites">
+      </div>
+    </div>
+
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/logic.js"></script>	
+</body>
+</html>

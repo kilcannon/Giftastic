@@ -1,0 +1,47 @@
+#gif-buttons {
+	margin-top: 20px;
+}
+
+#gif-add-form {
+}
+
+#gif-output {
+	margin-top: 30px;
+}
+
+.gif-result {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+}
+
+.button-container {
+	margin-right: 15px;
+}
+
+.container {
+	margin-top: 20px;
+}
+
+.gif-container {
+	border-style: solid;
+}
+
+.favButton {
+	position: absolute;
+	bottom: 35px;
+	left: 5px;
+	width: 60px;
+	font-size: 10px;
+}
+
+.gif-rating {
+	position: absolute;
+	bottom: 35px;
+	right: 20px;
+	font-size: 10px;
+}
+
+.favorite-gif {
+	margin-bottom: 10px;
+}
