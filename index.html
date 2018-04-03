@@ -5,7 +5,9 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
 	<meta charset="UTF-8">
 	<title>Giftastic!</title>
@@ -24,7 +26,7 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Totally Tubular 80s Awesomeness</h1>
-      <p class="lead">We are here to satisfy every nostalgic 80s gif desire you have!</p>
+      <p class="lead">We are here to supply only the best 80s gifs!</p>
     </div>
   </div>
 
@@ -37,6 +39,14 @@
   			<input type="text" id="gif-subject-input">
   			<input id="add-gif" type="submit" value="Submit">
   		</form>
+      <br>
+
+      <label for="gif-subject">Select desired number of results</label>
+      <select id="numResults">
+        <option value="10">10</option>
+        <option value="15" selected="selected">15</option>
+        <option value="20">20</option>
+      </select>
 
       <div id="gif-buttons">
         Select a category to get started!

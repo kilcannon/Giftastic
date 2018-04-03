@@ -17,6 +17,7 @@ body {
 .gif-result {
 	float: left;
 	margin-right: 10px;
+	margin-bottom: 10px;
 	position: relative;
 }
 
@@ -76,6 +77,15 @@ body {
 	color: whitesmoke;
 }
 
+.display-4 {
+	font-family: 'Faster One', cursive;
+	font-size: 80px !important;
+}
+
+.lead {
+	font-size: 20px !important;
+}
+
 .border-between > [class*='col-']:before {
    background: #330066;
    bottom: 15px;
@@ -92,8 +102,8 @@ body {
 
 #ghost {
 	position: absolute;
-	top: 450px;
-	left: 100px;
+	top: 900px;
+	left: 50px;
 }
 
 #jem {
@@ -106,4 +116,19 @@ body {
 	position: absolute;
 	top: 400px;
 	right: 200px;
+}
+
+.button {
+	display: inline-block;
+	border-style: none;
+	background-color: fuchsia;
+	color: white;
+	border-radius: 6px;
+	border-bottom: 2px solid #330066;
+}
+
+p {
+	font-weight: bold;
+	font-size: 12px;
+	color: #330066;
 }

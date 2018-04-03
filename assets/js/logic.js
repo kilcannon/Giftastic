@@ -1,10 +1,11 @@
 
 $('document').ready(function() {
 
-	var topics = ["aerobics", "moonwalk", "miami vice", "smurfs", "parachute pants", "roller skates", 
-  "bill and ted", "breakfast club", "die hard", "oregon trail", "trapper keeper", "punky brewster", "ninja turtles",
-  "jem", "pac man", "inspector gadget", "reading rainbow", "rainbow brite", "thundercats"]
+	var topics = ["aerobics", "moonwalk", "miami vice", "smurfs", "parachute pants", "roller skates", "back to the future",
+  "bill and ted", "breakfast club", "die hard", "max headroom", "olivia newton john", "punky brewster", "ninja turtles",
+  "jem", "pac man", "inspector gadget", "reading rainbow", "rainbow brite", "thundercats", "pretty in pink"]
 	var gifSubject = ""
+  // var favIndex = 0
 
 	function buttonPrintOut() { //prints buttons to top of page
 	  $("#gif-buttons").empty();
@@ -33,9 +34,10 @@ $('document').ready(function() {
 	function displayGifResults() { //pushes gif results from query of giphy api
 		$("#gif-output").empty()
 
+    var numResults = $("#numResults").val()
 	  var gifSubject = $(this).attr("gif-subject");
 	  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=JNBLlQfqCDk5qEafePPjwLNtkT8X3TnD&q=" +
-	  gifSubject + "&limit=10&offset=0&lang=en"
+	  gifSubject + "&limit=" + numResults + "&offset=0&lang=en"
 
 	  $.ajax({
 	    url: queryURL,
@@ -64,6 +66,7 @@ $('document').ready(function() {
         favButton.addClass("favButton")
         favButton.attr("favButton", "favButton-" + i)
         dlButton.addClass("dlButton")
+        dlButton.val("download")
         dlButton.attr("dlButton", "dlButton-" + i)
         newImage.attr('src', stillImageURL)
         newImage.attr("data-still", stillImageURL)
@@ -97,9 +100,14 @@ $('document').ready(function() {
     tinyImage.attr('src', newTinyURL)
     tinyImage.addClass('favorite-gif')
     $("#favorites").append(tinyImage)
+    // localStorage.setItem(favIndex, JSON.stringify(tinyImage))
+    // console.log(favIndex)
+    // favIndex++
   }
 
-  function downloadGif() {
+  function downloadGif(e) {  //allows user to download images populated in the primary gif container
+    e.preventDefault()
+
     var filePointer = $(this).attr("dlButton").replace('dlButton-', '.gif-result-')
     var fileURL = $(filePointer).attr("data-animate")
     window.location.href = fileURL
