@@ -1,7 +1,9 @@
 
 $('document').ready(function() {
 
-	var topics = ["aerobics", "moonwalk", "miami vice", "smurfs", "parachute pants", "roller skates", "hacky sack", "breakfast club"]
+	var topics = ["aerobics", "moonwalk", "miami vice", "smurfs", "parachute pants", "roller skates", 
+  "bill and ted", "breakfast club", "die hard", "oregon trail", "trapper keeper", "punky brewster", "ninja turtles",
+  "jem", "pac man", "inspector gadget", "reading rainbow", "rainbow brite", "thundercats"]
 	var gifSubject = ""
 
 	function buttonPrintOut() { //prints buttons to top of page
@@ -13,7 +15,6 @@ $('document').ready(function() {
 	    button.addClass("button")
 	    button.attr("gif-subject", topics[i])
 	    $("#gif-buttons").append(button)
-	    $("#gif-buttons").append("  ")
 	  }
 	}
 
@@ -45,14 +46,15 @@ $('document').ready(function() {
 
 	  	for (var i = 0; i < response.data.length; i++) {
 		  	
-        stillImageURL = response.data[i].images.original_still.url
-        animatedImageURL = response.data[i].images.original.url
-        tinyImageURL = response.data[i].images.preview_gif.url
+        stillImageURL = response.data[i].images.fixed_width_still.url
+        animatedImageURL = response.data[i].images.fixed_width.url
+        tinyImageURL = response.data[i].images.fixed_width_small.url
         gifRating = response.data[i].rating
 
         var newDiv = $("<div>")
         var newImage = $("<img>")
-        var favButton = $("<button>Favorite</button>")
+        var favButton = $("<button>❤</button>")
+        var dlButton = $("<button>💾</button>")
 
         newDiv.addClass("gif-result")
         newImage.addClass("gif-result-" + i)
@@ -61,6 +63,8 @@ $('document').ready(function() {
 
         favButton.addClass("favButton")
         favButton.attr("favButton", "favButton-" + i)
+        dlButton.addClass("dlButton")
+        dlButton.attr("dlButton", "dlButton-" + i)
         newImage.attr('src', stillImageURL)
         newImage.attr("data-still", stillImageURL)
         newImage.attr("data-animate", animatedImageURL)
@@ -68,9 +72,9 @@ $('document').ready(function() {
         newImage.attr("data-state", "still")
         newDiv.append($('<p>').text("Gif Rating: " + gifRating))
         newDiv.append(favButton)
+        newDiv.append(dlButton)
         
         $("#gif-output").append(newDiv)
-
 		}
 		})
 	}
@@ -95,10 +99,17 @@ $('document').ready(function() {
     $("#favorites").append(tinyImage)
   }
 
+  function downloadGif() {
+    var filePointer = $(this).attr("dlButton").replace('dlButton-', '.gif-result-')
+    var fileURL = $(filePointer).attr("data-animate")
+    window.location.href = fileURL
+  }
+
   $(document).on("click", "img", imageFlipper) //listens for button click of images to check for animate status
 	$(document).on("click", ".button", displayGifResults) //listens for button click to run ajax query of giphy api
   $(document).on("click", "#add-gif", buttonPrintOut) //listens for click of button add to refresh button loadout
-	$(document).on("click", ".favButton", addFavorite) //listens for click of button add to favorite section
+  $(document).on("click", ".favButton", addFavorite) //listens for click of button add to favorite section
+	$(document).on("click", ".dlButton", downloadGif) //listens for click of button add to download gif
   buttonPrintOut() //initializes button printout to begin giphy searches
   addNewButton() //allows a user to create a new category for buttons to pull giphy results
 

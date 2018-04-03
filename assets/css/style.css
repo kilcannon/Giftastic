@@ -1,3 +1,8 @@
+body {
+	background-color: #ffe6ff;
+	position: relative;
+}
+
 #gif-buttons {
 	margin-top: 20px;
 }
@@ -15,23 +20,35 @@
 	position: relative;
 }
 
+.button {
+	margin: 2px;
+}
+
 .button-container {
 	margin-right: 15px;
 }
 
 .container {
+	position: relative;
 	margin-top: 20px;
 }
 
 .gif-container {
-	border-style: solid;
 }
 
 .favButton {
 	position: absolute;
 	bottom: 35px;
 	left: 5px;
-	width: 60px;
+	width: 30px;
+	font-size: 10px;
+}
+
+.dlButton {
+	position: absolute;
+	bottom: 35px;
+	left: 40px;
+	width: 30px;
 	font-size: 10px;
 }
 
@@ -42,6 +59,51 @@
 	font-size: 10px;
 }
 
+#favorites{
+	margin-top: 30px; 
+}
+
 .favorite-gif {
 	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.jumbotron {
+	background-image: url("../../assets/images/retrowave.png");
+	background-color: #330066;
+	height: 400px;
+	min-height: 100%;
+	color: whitesmoke;
+}
+
+.border-between > [class*='col-']:before {
+   background: #330066;
+   bottom: 15px;
+   content: " ";
+   left: 0;
+   position: absolute;
+   width: 3px;
+   top: 85px;
+}
+
+.border-between > [class*='col-']:first-child:before {
+   display: none;
+}
+
+#ghost {
+	position: absolute;
+	top: 450px;
+	left: 100px;
+}
+
+#jem {
+	position: absolute;
+	top: 800px;
+	right: -100px;
+}
+
+#space-invader {
+	position: absolute;
+	top: 400px;
+	right: 200px;
 }

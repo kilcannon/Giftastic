@@ -11,10 +11,26 @@
 	<title>Giftastic!</title>
 </head>
 <body>
+    <div id="ghost">
+      <img src="assets/images/ghost.jpg" width="25%" height="25%" />
+    </div>
+    <div id="jem">
+      <img src="assets/images/band.jpg" width="50%" height="50%" />
+    </div>
+    <div id="space-invader">
+      <img src="assets/images/space-invader.png" width="125%" height="125%" />
+    </div>
 
-	<div class="row container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Totally Tubular 80s Awesomeness</h1>
+      <p class="lead">We are here to satisfy every nostalgic 80s gif desire you have!</p>
+    </div>
+  </div>
+
+  <div class="row container border-between">
     
-    <div id="button-container" class="col-md-2">
+    <div id="button-container" class="col-md-3"><h2>Gif Search</h2>
 
   		<form id="gif-add-form">
   			<label for="gif-subject">Add new gif button!</label>
@@ -23,16 +39,17 @@
   		</form>
 
       <div id="gif-buttons">
+        Select a category to get started!
       </div>
 
     </div>
 
-    <div id="gif-container" class="col-md-9"><h3>Gif Results</h3>
+    <div id="gif-container" class="col-md-7"><h2>Gif Results</h2>
   		<div id="gif-output">
   		</div>
     </div>
 
-    <div id="favorites-container" class="col-md-1"><h3>Favorites</h3>
+    <div id="favorites-container" class="col-md-1"><h2>Favorites</h2>
       <div id="favorites">
       </div>
     </div>
