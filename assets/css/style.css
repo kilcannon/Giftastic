@@ -84,6 +84,7 @@ body {
 
 .lead {
 	font-size: 20px !important;
+	color: whitesmoke;
 }
 
 .border-between > [class*='col-']:before {

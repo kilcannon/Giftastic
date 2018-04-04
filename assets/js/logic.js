@@ -66,7 +66,6 @@ $('document').ready(function() {
         favButton.addClass("favButton")
         favButton.attr("favButton", "favButton-" + i)
         dlButton.addClass("dlButton")
-        dlButton.val("download")
         dlButton.attr("dlButton", "dlButton-" + i)
         newImage.attr('src', stillImageURL)
         newImage.attr("data-still", stillImageURL)
@@ -100,9 +99,6 @@ $('document').ready(function() {
     tinyImage.attr('src', newTinyURL)
     tinyImage.addClass('favorite-gif')
     $("#favorites").append(tinyImage)
-    // localStorage.setItem(favIndex, JSON.stringify(tinyImage))
-    // console.log(favIndex)
-    // favIndex++
   }
 
   function downloadGif(e) {  //allows user to download images populated in the primary gif container
@@ -111,6 +107,7 @@ $('document').ready(function() {
     var filePointer = $(this).attr("dlButton").replace('dlButton-', '.gif-result-')
     var fileURL = $(filePointer).attr("data-animate")
     window.location.href = fileURL
+    // download(fileURL, "newgif.gif", "image/gif")
   }
 
   $(document).on("click", "img", imageFlipper) //listens for button click of images to check for animate status
